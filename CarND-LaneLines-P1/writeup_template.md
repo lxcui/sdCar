@@ -25,15 +25,21 @@ As the project suggested, I built two versions of pipelines for line detection. 
       Stack lines images acquired in previous step to original images using given helper function weighted_img. This step will produce my alpha version of line detection images.
       
 #### V2 
-  1.  
-  2. 
-  3. 
-  4. 
-  5. 
-  6.   
-  7. Left and Right line
+  ##### 1. Yellow & White Image
+      Same as V1.
+  ##### 2. Region of Interest
+      Same as V1.
+  ##### 3. Gray Images
+      Same as V1.
+  ##### 4. Gaussian Smoothing
+      Same as V1.
+  ##### 5. Edge Detection
+      Same as V1.
+  ##### 6. Line Image
+      Same as V1.
+  ##### 7. Left and Right line
       Use the lines acquired from previous step to create two final line (left, right) for line detection. Will calculate the interception and slope of left and right line based on the detected line's length, slope and intertection. Longer lines have higher weight in the final lines.
-  8. Acquire V2 result image
+  ##### 8. Acquire V2 result image
       Stack final left and right lines to the original image.
       
  Above is just a general introduction. You can check the python book for detail.
