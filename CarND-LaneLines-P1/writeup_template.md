@@ -25,9 +25,13 @@ V1
       Stack lines images acquired in previous step to original images using given helper function weighted_img. This step will produce my alpha version of line detection images.
       
 V2 
-  1. - 6.
-      Same as V1
-  7. Left and Right line
+  1. Same as V1
+  2. Same as V1
+  3. Same as V1
+  4. Same as V1
+  5. Same as V1
+  6. Same as V1
+  7. Left and Right line
       Use the lines acquired from previous step to create two final line (left, right) for line detection. Will calculate the interception and slope of left and right line based on the detected line's length, slope and intertection. Longer lines have higher weight in the final lines.
   8. Acquire V2 result image
       Stack final left and right lines to the original image.
