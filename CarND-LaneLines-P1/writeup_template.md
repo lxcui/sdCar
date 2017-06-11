@@ -9,19 +9,19 @@
 As the project suggested, I built two versions of pipelines for line detection. For the most parts, those two pipelines are the same. They are just different in the ending section. To better illustrate my pipelines, let me brake them down into steps.
 
 #### V1
-  1. Yellow & White Image 
+  ##### 1. Yellow & White Image 
       Use yellow and white image mask to extract yellow and white color areas in the image
-  2. Region of Interest
+  ##### 2. Region of Interest
       Apply self-defined region filter to yellow&white images acquired from previous step. The region of interest mainly contains road lines.
-  3. Gray Images
+  ##### 3. Gray Images
       Apply grayscale function defined in given helper function to images acquired in previous step. This step will produce black/white images, which is used for future edge detections.
-  4. Gaussian Smoothing
+  ##### 4. Gaussian Smoothing
       Apply gaussian noise kernal with kernal size 15 to the gray images acquired from previous step. This is also a mid step for edge detection.
-  5. Edge Detection
+  ##### 5. Edge Detection
       Apply Canny transform to smoothed images acquired from gaussian smoothed images.
-  6. Line Image
+  ##### 6. Line Image
       Apply Hough transform to detect lines in edge detection images acquired in previous step.
-  7. Acquire V1 result image
+  ##### 7. Acquire V1 result image
       Stack lines images acquired in previous step to original images using given helper function weighted_img. This step will produce my alpha version of line detection images.
       
 #### V2 
