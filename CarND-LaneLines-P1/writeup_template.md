@@ -1,47 +1,46 @@
 # **Finding Lane Lines on the Road** 
 
-## Writeup Template
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
-
----
-
-**Finding Lane Lines on the Road**
-
-The goals / steps of this project are the following:
-* Make a pipeline that finds lane lines on the road
-* Reflect on your work in a written report
-
-
-[//]: # (Image References)
-
-[image1]: ./examples/grayscale.jpg "Grayscale"
-
 ---
 
 ### Reflection
 
-### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+### 1. Pipeline
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+As the project suggested, I built two versions of pipelines for line detection. For the most parts, those two pipelines are the same. They are just different in the ending section. To better illustrate my pipelines, let me brake them down into steps.
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+V1
+  1. Yellow & White Image 
+      Use yellow and white image mask to extract yellow and white color areas in the image
+  2. Region of Interest
+      Apply self-defined region filter to yellow&white images acquired from previous step. The region of interest mainly contains road lines.
+  3. Gray Images
+      Apply grayscale function defined in given helper function to images acquired in previous step. This step will produce black/white images, which is used for future edge detections.
+  4. Gaussian Smoothing
+      Apply gaussian noise kernal with kernal size 15 to the gray images acquired from previous step. This is also a mid step for edge detection.
+  5. Edge Detection
+      Apply Canny transform to smoothed images acquired from gaussian smoothed images.
+  6. Line Image
+      Apply Hough transform to detect lines in edge detection images acquired in previous step.
+  7. Acquire V1 result image
+      Stack lines images acquired in previous step to original images using given helper function weighted_img. This step will produce my alpha version of line detection images.
+      
+V2 
+  1. - 6.
+      Same as V1
+  7. Left and Right line
+      Use the lines acquired from previous step to create two final line (left, right) for line detection. Will calculate the interception and slope of left and right line based on the detected line's length, slope and intertection. Longer lines have higher weight in the final lines.
+  8. Acquire V2 result image
+      Stack final left and right lines to the original image.
+      
+ Above is just a general introduction. You can check the python book for detail.
+ 
 
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
+### 2. Potential Shortcoming
 
-![alt text][image1]
-
-
-### 2. Identify potential shortcomings with your current pipeline
+  In the challenging video, my pipeline is not working well. Basically, when the line is not very straight (curved), my pipeline will have issue detecting them.
 
 
-One potential shortcoming would be what would happen when ... 
+### 3. Future improvement
 
-Another shortcoming could be ...
+  Can define the pipeline better for curved lines.
 
-
-### 3. Suggest possible improvements to your pipeline
-
-A possible improvement would be to ...
-
-Another potential improvement could be to ...
