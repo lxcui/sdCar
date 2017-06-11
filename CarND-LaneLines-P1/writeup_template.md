@@ -8,7 +8,7 @@
 
 As the project suggested, I built two versions of pipelines for line detection. For the most parts, those two pipelines are the same. They are just different in the ending section. To better illustrate my pipelines, let me brake them down into steps.
 
-V1
+#### V1
   1. Yellow & White Image 
       Use yellow and white image mask to extract yellow and white color areas in the image
   2. Region of Interest
@@ -24,7 +24,7 @@ V1
   7. Acquire V1 result image
       Stack lines images acquired in previous step to original images using given helper function weighted_img. This step will produce my alpha version of line detection images.
       
-V2 
+#### V2 
   1.  
   2. 
   3. 
