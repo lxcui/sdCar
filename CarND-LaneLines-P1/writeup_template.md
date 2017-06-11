@@ -42,6 +42,7 @@ Use the lines acquired from previous step to create two final line (left, right)
 ##### 8. Acquire V2 result image
 Stack final left and right lines to the original image.
       
+ 
 Above is just a general introduction. You can check the python book for detail.
  
 
