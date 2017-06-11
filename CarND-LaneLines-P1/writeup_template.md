@@ -30,8 +30,7 @@ As the project suggested, I built two versions of pipelines for line detection. 
   3. 
   4. 
   5. 
-  6. 
-      
+  6.   
   7. Left and Right line
       Use the lines acquired from previous step to create two final line (left, right) for line detection. Will calculate the interception and slope of left and right line based on the detected line's length, slope and intertection. Longer lines have higher weight in the final lines.
   8. Acquire V2 result image
